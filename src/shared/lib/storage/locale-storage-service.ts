@@ -1,36 +1,69 @@
-export const isBrowser = () => typeof window !== 'undefined';
+export interface StorageLike {
+  getItem(key: string): string | null;
+  setItem(key: string, value: string): void;
+  removeItem(key: string): void;
+}
 
-export const localStorageService = {
-  get<T>(key: string): T | null {
-    if (!isBrowser()) return null;
+const createMemoryStorage = (): StorageLike => {
+  const store = new Map<string, string>();
 
-    try {
-      const value = window.localStorage.getItem(key);
-      if (value === null) return null;
-      return JSON.parse(value) as T;
-    } catch (error) {
-      console.warn(`[LocalStorage] get error for key "${key}"`, error);
-      return null;
-    }
-  },
-
-  set<T>(key: string, value: T): void {
-    if (!isBrowser()) return;
-
-    try {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    } catch (error) {
-      console.warn(`[LocalStorage] set error for key "${key}"`, error);
-    }
-  },
-
-  remove(key: string): void {
-    if (!isBrowser()) return;
-
-    try {
-      window.localStorage.removeItem(key);
-    } catch (error) {
-      console.warn(`[LocalStorage] remove error for key "${key}"`, error);
-    }
-  },
+  return {
+    getItem: key => store.get(key) ?? null,
+    setItem: (key, value) => {
+      store.set(key, value);
+    },
+    removeItem: key => {
+      store.delete(key);
+    },
+  };
 };
+
+const getSafeStorage = (): StorageLike => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const testKey = '__test__';
+      window.localStorage.setItem(testKey, '1');
+      window.localStorage.removeItem(testKey);
+      return window.localStorage;
+    }
+  } catch (e) {
+    console.error(e, ' getSafeStorage error');
+  }
+
+  return createMemoryStorage();
+};
+
+export const createStorageService = (
+  storage: StorageLike = getSafeStorage(),
+) => {
+  return {
+    get<T>(key: string): T | null {
+      try {
+        const value = storage.getItem(key);
+        if (!value) return null;
+        return JSON.parse(value) as T;
+      } catch (error) {
+        console.warn(`[Storage] get error for key "${key}"`, error);
+        return null;
+      }
+    },
+
+    set<T>(key: string, value: T): void {
+      try {
+        storage.setItem(key, JSON.stringify(value));
+      } catch (error) {
+        console.warn(`[Storage] set error for key "${key}"`, error);
+      }
+    },
+
+    remove(key: string): void {
+      try {
+        storage.removeItem(key);
+      } catch (error) {
+        console.warn(`[Storage] remove error for key "${key}"`, error);
+      }
+    },
+  };
+};
+
+export const storageService = createStorageService();

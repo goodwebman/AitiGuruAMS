@@ -1,6 +1,6 @@
-const customTemplate = ({ componentName, jsx }, { tpl }) => {
+module.exports = ({ componentName, jsx }, { tpl }) => {
   return tpl`
-    import { FC, SVGProps } from 'react';
+    import type { FC, SVGProps } from 'react';
 
     const ${componentName}: FC<SVGProps<SVGSVGElement> & { color?: string }> = ({
       color = 'var(--icon-secondary)',
@@ -10,5 +10,3 @@ const customTemplate = ({ componentName, jsx }, { tpl }) => {
     export default ${componentName};
   `;
 };
-
-module.exports = customTemplate;

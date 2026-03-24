@@ -1,49 +1,65 @@
+
 @mixin h1 {
-  font-family: 'Inter';
-  font-weight: 600;
-  font-size: 40px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
 }
 
 @mixin h2 {
-  font-family: 'Inter';
+  font-family: 'Cairo', sans-serif;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 36px;
+  line-height: 44px;
 }
-
-
 
 @mixin h3 {
-  font-family: 'Inter';
-  font-weight: 400;
-  font-size: 14px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
 }
 
+
 @mixin b1 {
-  font-family: 'SFProText';
-  font-weight: 400;
-  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 @mixin b2 {
-  font-family: 'SFProText';
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 16px;
+  line-height: 24px;
 }
 
 @mixin b3 {
-  font-family: 'SFProText';
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
   font-size: 14px;
+  line-height: 20px;
 }
 
-@mixin b4 {
-  font-family: 'SFProText';
-  font-weight: 400;
-  font-size: 12px;
+
+@mixin p1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
 }
 
-@mixin b5 {
-  font-family: 'SFProText';
-  font-weight: 400;
-  font-size: 10px;
+@mixin p2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin p3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
 }

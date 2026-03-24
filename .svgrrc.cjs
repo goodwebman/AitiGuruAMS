@@ -1,6 +1,8 @@
+const customTemplate = require('./svgr-template.cjs');
+
 module.exports = {
   filenameCase: 'kebab',
-  template: require('./svgr-template.js'),
+  template: customTemplate,
   typescript: true,
   prettier: true,
   icon: true,

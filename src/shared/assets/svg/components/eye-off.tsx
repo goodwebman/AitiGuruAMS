@@ -1,0 +1,43 @@
+import type { FC, SVGProps } from 'react';
+const SvgEyeOff: FC<
+  SVGProps<SVGSVGElement> & {
+    color?: string,
+  }
+> = ({ color = 'var(--icon-secondary)', ...props }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}>
+    <g filter="url(#filter0_i_1046_84)">
+      <path
+        stroke="#EDEDED"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M10.743 5.092Q11.353 5.001 12 5c5.105 0 8.455 4.505 9.58 6.287.137.215.205.323.243.49.029.125.029.322 0 .447-.038.166-.107.274-.244.492-.3.474-.757 1.141-1.363 1.865M6.724 6.715c-2.162 1.467-3.63 3.504-4.303 4.57-.137.217-.205.325-.243.492a1.2 1.2 0 0 0 0 .446c.038.167.106.274.242.49C3.546 14.495 6.895 19 12 19c2.059 0 3.832-.732 5.289-1.723M3 3l18 18M9.88 9.879a3 3 0 1 0 4.243 4.243"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_i_1046_84"
+        width={21.688}
+        height={24}
+        x={1.156}
+        y={2}
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feColorMatrix
+          in="SourceAlpha"
+          result="hardAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={2} />
+        <feComposite in2="hardAlpha" k2={-1} k3={1} operator="arithmetic" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.17 0" />
+        <feBlend in2="shape" result="effect1_innerShadow_1046_84" />
+      </filter>
+    </defs>
+  </svg>
+);
+export default SvgEyeOff;

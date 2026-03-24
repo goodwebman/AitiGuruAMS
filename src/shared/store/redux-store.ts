@@ -3,13 +3,13 @@ import {
   configureStore,
   type ThunkAction,
   type UnknownAction,
-} from '@reduxjs/toolkit';
+} from '@reduxjs/toolkit'
 import {
   useDispatch,
   useSelector,
   useStore,
   type TypedUseSelectorHook,
-} from 'react-redux';
+} from 'react-redux'
 import {
   FLUSH,
   PAUSE,
@@ -19,10 +19,16 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
-const rootReducer = combineReducers({});
+console.log('storage', storage);
+console.log('storage.getItem', storage.getItem);
+
+const dummyReducer = (state = {}) => state;
+const rootReducer = combineReducers({
+  dummy: dummyReducer,
+});
 
 const persistConfig = {
   key: 'root',

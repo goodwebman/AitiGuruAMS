@@ -1,8 +1,9 @@
-import { StorageKey } from '@/shared/config'
-import { localStorageService } from '@/shared/lib/storage';
-import { darkTheme, lightTheme } from '@/shared/theme'
-import { ThemeContext } from '@/shared/theme/context/theme-context'
-import  { ThemeNameEnum, type ThemeType } from '@/shared/theme/types'
+import { StorageKey } from '@/shared/config';
+import { storageService } from '@/shared/lib/storage';
+
+import { darkTheme, lightTheme } from '@/shared/theme';
+import { ThemeContext } from '@/shared/theme/context/theme-context';
+import { ThemeNameEnum, type ThemeType } from '@/shared/theme/types';
 import {
   useCallback,
   useEffect,
@@ -13,7 +14,7 @@ import {
 } from 'react';
 
 const getInitialTheme = (): ThemeNameEnum => {
-  const savedTheme = localStorageService.get<ThemeNameEnum>(StorageKey.THEME);
+  const savedTheme = storageService.get<ThemeNameEnum>(StorageKey.THEME);
 
   if (savedTheme === ThemeNameEnum.DARK || savedTheme === ThemeNameEnum.LIGHT) {
     return savedTheme;
@@ -36,7 +37,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     document.body.setAttribute('data-theme', currentTheme);
-    localStorageService.set(StorageKey.THEME, currentTheme);
+    storageService.set(StorageKey.THEME, currentTheme);
   }, [currentTheme]);
 
   const selectedTheme: ThemeType = useMemo(
