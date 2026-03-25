@@ -29,7 +29,7 @@
 }
 
 .label {
-  @include typo.b2;
+  @include typo.b3;
   color: var(--text-inverted);
   user-select: none;
   flex: 1;

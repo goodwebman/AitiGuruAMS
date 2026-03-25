@@ -4,25 +4,30 @@
   --bg-primary-low: var(--blue-100);
   --bg-primary-hover: var(--blue-400);
   --bg-secondary: var(--blue-200);
+  --bg-blured: var(--gray-500-light);
   --bg-inverted: var(--gray-0);
-  --bg-contrast: var(--gray-800);
+  --bg-contrast: var(--gray-200-light);
   --bg-success: var(--green-500);
 
   --bg-disabled: var(--gray-300);
   --bg-danger: var(--red-100);
-  --bg-danger-hover: var(--red-100); /* нет второго варианта в палитре */
+  --bg-danger-hover: var(--red-100);
   --bg-ghost: var(--gray-200);
 
   /* Text */
   --text-primary: var(--gray-0);
+  --text-link: var(--blue-400);
+  --text-subtitle: var(--gray-400-light);
+  --text-default: var(--gray-100-light);
+  --text-contrast: var(--gray-300-light);
   --text-secondary: var(--gray-800);
   --text-inverted: var(--gray-500);
-  --text-placeholder: var(--gray-600);
+  --text-placeholder: var(--gray-700);
   --text-danger: var(--red-100);
   --text-success: var(--green-500);
 
   /* Border */
-  --border-primary: var(--gray-300);
+  --border-primary: var(--gray-0);
   --border-danger: var(--red-100);
   --border-success: var(--green-500);
   --border-default: var(--gray-200);

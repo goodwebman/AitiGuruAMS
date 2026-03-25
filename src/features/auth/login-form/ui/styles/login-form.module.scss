@@ -1,0 +1,94 @@
+@use '@/shared/styles/typography/typography.module' as typo;
+@use '@/shared/styles/shadows/shadows.module' as text-shadow;
+@use '@/shared/styles/shadows/shadows.module' as shadow;
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-blured);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 520px;
+  padding: 48px 58px;
+  border-radius: 32px;
+  background: var(--bg-contrast);
+  border: 5px solid var(--border-primary);
+  @include shadow.shadow(inset-gray);
+  @include shadow.shadow(complex-gray);
+}
+
+.logo {
+  margin: 0 auto;
+  border-radius: 100%;
+}
+
+.title {
+  @include typo.b1;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  @include typo.b2;
+  text-align: center;
+  color: var(--text-default);
+  margin-bottom: 24px;
+
+  @include text-shadow.text-shadow(medium-glow);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+
+  color: var(--text-contrast);
+  @include typo.b2;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--bg-ghost);
+    text-shadow: none;
+  }
+
+  span {
+    padding: 0 10px;
+    @include text-shadow.text-shadow(medium-glow);
+  }
+}
+
+.footer {
+  text-align: center;
+  @include typo.b2;
+  color: var(--text-subtitle);
+}
+
+.link {
+  color: var(--text-link);
+  cursor: pointer;
+
+  text-decoration: underline;
+}

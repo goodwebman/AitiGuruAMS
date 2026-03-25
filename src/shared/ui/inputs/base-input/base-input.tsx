@@ -137,7 +137,7 @@ export const BaseInput = forwardRef<HTMLInputElement, BaseInputProps>(
               className={cnContentRight}
               onClick={handleClear}
             >
-             <Icons.Xmark />
+             <Icons.Xmark width={20} height={20}/>
             </button>
           )}
         </div>

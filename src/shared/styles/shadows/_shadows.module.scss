@@ -2,14 +2,27 @@
 
 $shadows: (
   soft-glow: 0px 4px 8px rgba(0, 0, 0, 0.1),
-  medium-glow: 0 6px 12px rgba(0, 0, 0, 0.15),
+  medium-glow: 0px 4px 4px rgba(0, 0, 0, 0.07),
   intense-glow: 0px 6px 42px 0px rgba(15, 18, 21, 0.33),
   colorful-glow: 0 0 10px 2px rgba(0, 150, 255, 0.6),
+  inset-gray: inset 0 0 0 4px #d1d5db,
+  complex-gray: (
+    inset 0 0 0 1px #d1d5db,
+    0 20px 60px rgba(0, 0, 0, 0.08),
+  ),
 );
 
 @mixin shadow($type) {
   @if map.has-key($shadows, $type) {
     box-shadow: map.get($shadows, $type);
+  } @else {
+    @warn "Shadow `#{$type}` not found!";
+  }
+}
+
+@mixin text-shadow($type) {
+  @if map.has-key($shadows, $type) {
+    text-shadow: map.get($shadows, $type);
   } @else {
     @warn "Shadow `#{$type}` not found!";
   }

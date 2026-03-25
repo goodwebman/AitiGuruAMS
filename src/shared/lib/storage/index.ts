@@ -1,1 +1,1 @@
-export * from './locale-storage-service'
+export * from './storage-service'

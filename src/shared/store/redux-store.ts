@@ -3,13 +3,7 @@ import {
   configureStore,
   type ThunkAction,
   type UnknownAction,
-} from '@reduxjs/toolkit'
-import {
-  useDispatch,
-  useSelector,
-  useStore,
-  type TypedUseSelectorHook,
-} from 'react-redux'
+} from '@reduxjs/toolkit';
 import {
   FLUSH,
   PAUSE,
@@ -19,21 +13,25 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
-} from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+} from 'redux-persist';
 
-console.log('storage', storage);
-console.log('storage.getItem', storage.getItem);
+import sessionReducer from '@/entities/session/model/slice';
+import {
+  useDispatch,
+  useSelector,
+  useStore,
+  type TypedUseSelectorHook,
+} from 'react-redux';
+import { createDynamicStorage } from '../lib/storage';
 
-const dummyReducer = (state = {}) => state;
 const rootReducer = combineReducers({
-  dummy: dummyReducer,
+  session: sessionReducer,
 });
 
 const persistConfig = {
   key: 'root',
-  storage,
-  whitelist: [],
+  storage: createDynamicStorage(),
+  whitelist: ['session'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
