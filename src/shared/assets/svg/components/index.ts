@@ -6,6 +6,7 @@ import Lock from './lock';
 import Logo from './logo';
 import Plus from './plus';
 import Refresh from './refresh';
+import Spinner from './spinner';
 import User from './user';
 import Xmark from './xmark';
 
@@ -16,6 +17,7 @@ export const Icons = {
   Logo,
   Plus,
   Refresh,
+  Spinner,
   User,
   Xmark,
 };
