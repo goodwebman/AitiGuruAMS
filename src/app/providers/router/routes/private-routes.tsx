@@ -1,10 +1,11 @@
-import { HomePage } from '@/pages/home/home-page';
+
+import { ProductsPage } from '@/pages/products/products-page'
 import { ROUTES } from '@/shared/config/routes/routes';
 import type { RouteObject } from 'react-router-dom';
 
 export const privateRoutes: RouteObject[] = [
   {
-    path: ROUTES.HOME,
-    element: <HomePage />,
+    path: ROUTES.PRODUCTS,
+    element: <ProductsPage />,
   },
 ];
