@@ -9,15 +9,15 @@
 
 .success {
   background-color: var(--color-lime);
-  color: var(--color-white)
+
 }
 
 .error {
   background-color: var(--bg-danger);
-  color: var(--color-white)
+  color: var(--text-default)
 }
 
 .default {
   background-color: var( --bg-inverted);
-  color: var(--color-dark)
+ color: var(--text-default)
 }

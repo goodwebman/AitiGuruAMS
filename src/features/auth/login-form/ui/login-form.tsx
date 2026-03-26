@@ -18,7 +18,7 @@ export const LoginForm = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  const { control, handleSubmit } = useForm<LoginFormValues>({
+  const { control, handleSubmit  } = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       username: 'emilys',
@@ -47,11 +47,11 @@ export const LoginForm = () => {
         position: 'top-center',
       });
       navigate(ROUTES.PRODUCTS);
-    } catch {
-      toast.error('Ошибка авторизации', {
+    } catch(e) {
+      toast.error(`${e}`, {
         position: 'top-center',
       });
-      console.error('Ошибка авторизации');
+      console.error(e);
     }
   };
 
@@ -73,6 +73,7 @@ export const LoginForm = () => {
             placeholder="Введите логин"
             contentLeft={<Icons.User width={20} height={20} />}
             isClearable
+           
           />
 
           <InputDefaultField

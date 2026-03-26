@@ -21,8 +21,8 @@ export const useLogin = () => {
         await persistor.flush();
 
         return { data: result };
-      } catch (error) {
-        return { error };
+      } catch (error: any) {
+        throw error?.message ? new Error(error.message) : error;
       }
     },
     [dispatch],
@@ -35,3 +35,4 @@ export const useLogin = () => {
     isAuthorized: session.type === 'authorized',
   };
 };
+
