@@ -1,0 +1,29 @@
+.wrapper {
+  width:50px;
+  height: 50px;
+  position: relative;
+  flex-shrink: 0;
+
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  background: #C4C4C4;
+  border-radius: 6px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+
+.loaded {
+  opacity: 1;
+}

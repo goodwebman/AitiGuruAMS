@@ -61,7 +61,7 @@
 }
 
 body {
-  background-color: var(--background);
+  background-color: var(--bg-body);
 }
 
 /* Reset and base styles  */

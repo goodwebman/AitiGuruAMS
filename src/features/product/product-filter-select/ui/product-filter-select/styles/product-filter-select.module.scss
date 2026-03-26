@@ -1,0 +1,35 @@
+
+@use '@/shared/styles/typography/typography.module' as typo;
+.root {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: var(--bg-inverted);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  min-width: 160px;
+  z-index: 20;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.option {
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  @include typo.h5;
+  &:hover {
+    
+    color: var(--text-inverted);
+  }
+}

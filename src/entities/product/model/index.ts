@@ -1,0 +1,1 @@
+export type {GetProductsResponse, ProductDto} from './types'

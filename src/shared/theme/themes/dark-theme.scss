@@ -13,10 +13,12 @@
   --bg-danger: var(--red-100);
   --bg-danger-hover: var(--red-100);
   --bg-ghost: var(--gray-200);
+  --bg-body: var(--gray-100);
 
   /* Text */
   --text-primary: var(--gray-0);
   --text-link: var(--blue-400);
+  --text-suptitle: var(--gray-300);
   --text-subtitle: var(--gray-400-light);
   --text-default: var(--gray-100-light);
   --text-contrast: var(--gray-300-light);
@@ -37,7 +39,7 @@
   --spinner-ghost: var(--blue-300);
 
   /* Icons */
-  --icon-primary: var(--gray-0);
+  --icon-primary: var(--gray-800);
   --icon-secondary: var(--gray-200);
 
   /* Skeletons */

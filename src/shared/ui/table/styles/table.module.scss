@@ -1,0 +1,70 @@
+@use '@/shared/styles/typography/typography.module' as typo;
+.table {
+  width: 100%;
+
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.header {
+  @include typo.h4;
+  color: var(--text-inverted);
+}
+
+.row {
+  border-bottom: 2px solid var(--border-default);
+}
+
+.cell {
+  padding: 12px;
+  text-align: left;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.headerCell {
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.danger {
+  color: var(--text-danger);
+  @include typo.p2;
+}
+
+.cell:nth-child(1),
+.headerCell:nth-child(1) {
+  width: 30%;
+}
+
+.cell:nth-child(2),
+.headerCell:nth-child(2) {
+  width: 20%;
+}
+
+.cell:nth-child(3),
+.headerCell:nth-child(3) {
+  width: 15%;
+}
+
+.cell:nth-child(4),
+.headerCell:nth-child(4) {
+  width: 10%;
+}
+
+.cell:nth-child(5),
+.headerCell:nth-child(5) {
+  width: 10%;
+}
+
+.cell:nth-child(6),
+.headerCell:nth-child(6) {
+  width: 10%;
+}

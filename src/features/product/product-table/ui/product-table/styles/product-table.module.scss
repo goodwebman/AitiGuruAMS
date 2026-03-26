@@ -1,0 +1,133 @@
+@use '@/shared/styles/typography/typography.module' as typo;
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableWrapper {
+  background: var(--bg-inverted);
+  border-radius: 24px;
+}
+
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.rowContentWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &.selected::after {
+    content: '';
+    position: absolute;
+    height: 82px;
+    left: -12px;
+    top: -13px;
+    width: 3px;
+    background: var(--bg-secondary);
+    border-radius: 2px;
+  }
+}
+
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--text-secondary);
+  @include typo.h4;
+}
+
+.category {
+  color: var(--text-suptitle);
+  @include typo.h5;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.vendor {
+  color: var(--text-secondary);
+  @include typo.h4;
+}
+
+.article {
+  color: var(--text-secondary);
+  @include typo.p2;
+}
+
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating {
+  @include typo.p2;
+  color: var(--text-secondary);
+
+  &.danger {
+    color: var(--text-danger);
+  }
+}
+
+.raiting-default {
+  @include typo.p2;
+  color: var(--text-secondary);
+}
+
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.priceMain {
+  @include typo.p2;
+  color: var(--text-secondary);
+}
+
+.priceDecimals {
+  @include typo.p2;
+  color: var(--text-inverted);
+}
+
+
+.ascWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.fakeActions {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.fakeButton {
+  padding: 4px 14px;
+  background-color: var(--bg-primary);
+
+  &:focus {
+    background-color: var(--bg-primary);
+  }
+}

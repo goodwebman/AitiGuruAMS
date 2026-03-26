@@ -1,0 +1,77 @@
+
+@use '@/shared/styles/typography/typography.module' as typo;
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info {
+  color: var(--text-suptitle);
+  
+  @include typo.h4;
+  font-weight: 400;
+}
+
+.infoValue {
+ color: var(--text-secondary);
+
+  @include typo.h4;
+   font-weight: 400;
+}
+
+.button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 6px;
+  border: 1px solid var(--border-default);
+  background-color: var(--bg-inverted);
+  color: var(--text-suptitle);
+  cursor: pointer;
+  @include typo.h5;
+  transition: all 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    background-color: var(--bg-primary-low);
+    color: var(--text-primary);
+    border-color: var(--primary);
+  }
+
+  &.arrow {
+    background: transparent;
+    border: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.arrowActive {
+    color: var(--primary);
+  }
+}
+
+.dots {
+  padding: 0 4px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}

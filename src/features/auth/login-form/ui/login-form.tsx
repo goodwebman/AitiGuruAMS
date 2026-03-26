@@ -1,19 +1,17 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Controller, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Controller, useForm } from 'react-hook-form'
 
-import { useLogin } from '@/entities/session';
-import { InputDefaultField } from '@/shared/ui';
-import { Buttons } from '@/shared/ui/buttons';
+import { useLogin } from '@/entities/session'
+import { Checkbox, InputDefaultField } from '@/shared/ui'
+import { Buttons } from '@/shared/ui/buttons'
 
-import { Icons } from '@/shared/assets/svg/components';
-import { ROUTES } from '@/shared/config/routes/routes';
-import { CheckboxButton } from '@/shared/ui/checkbox/checkbox-button';
-import { CheckboxContainer } from '@/shared/ui/checkbox/checkbox-container';
-import { useState } from 'react';
-import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-import { loginSchema, type LoginFormValues } from '../model/validation';
-import { getClasses } from './styles/get-classes';
+import { Icons } from '@/shared/assets/svg/components'
+import { ROUTES } from '@/shared/config/routes/routes'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
+import { loginSchema, type LoginFormValues } from '../model/validation'
+import { getClasses } from './styles/get-classes'
 
 export const LoginForm = () => {
   const { login, isLoading } = useLogin();
@@ -61,7 +59,7 @@ export const LoginForm = () => {
     <div className={cnWrapper}>
       <div className={cnCard}>
         <div className={cnLogo}>
-          <Icons.Logotype width={82} height={82} />
+          <Icons.Logotype  width={82} height={82} />
         </div>
 
         <h1 className={cnTitle}>Добро пожаловать!</h1>
@@ -100,13 +98,13 @@ export const LoginForm = () => {
               control={control}
               name="remember"
               render={({ field }) => (
-                <CheckboxContainer>
-                  <CheckboxButton
+                <Checkbox.Container>
+                  <Checkbox.Button
                     checked={field.value}
                     onChange={() => field.onChange(!field.value)}
                     label="Запомнить данные"
                   />
-                </CheckboxContainer>
+                </Checkbox.Container>
               )}
             />
           </div>
